@@ -10,6 +10,6 @@ To analyze the data, you will need to install the `R` package `tidyverse`. The r
 
 To execute the analysis, from the project folder you can run
 
-`Rscrpt -e "rmarkdown::render('report.Rmd')"
+`Rscript -e "rmarkdown::render('report.Rmd')"
 
 This will create a file called `report.html` output in your directory that contains the results.
