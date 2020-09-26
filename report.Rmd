@@ -27,7 +27,7 @@ load("birth.Rdata")
 ```
 
 <!--
-  The code chunk below loads in the package tidyverse, which you'll have to install if you haven't already
+  The code chunk below loads in the package s, which you'll have to install if you haven't already
 -->
 
 ```{r, required-pckgs}

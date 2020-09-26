@@ -8,7 +8,9 @@ To analyze the data, you will need to install the `R` package `tidyverse`. The r
 
 ### Execute the analysis
 
-The cleaned birth record data is located in the project folder (`birth_cleaned.Rdata`). To execute the analysis, from the project folder you can run
+The raw birth record data is located in the project folder (`birth.Rdata`). The R Markdown script cleans the data and includes a brief description of the project and analysis results.
+
+To execute the analysis, from the project folder you can run
 
 `Rscript -e "rmarkdown::render('report.Rmd')"`
 
