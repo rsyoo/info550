@@ -14,7 +14,7 @@ The raw birth record data is located in the project folder (`birth.Rdata`).
 
 `make fig1.png` will create the scatterplot of birthweight by maternal age.
 
-`make report.html` will compile the report as a file called `report.html` in your directoy that contains the result.
+`make report.html` will compile the report as a file called `report.html` in your directory that contains the result.
 
 `make clean` will remove the cleaned data file, figure, and report from your directory.
 
