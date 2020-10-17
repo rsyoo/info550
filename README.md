@@ -2,16 +2,20 @@
 
 For my project, I will analyze birth records from the year 1991 for the state of Kansas.
 
-To analyze the data, you will need to install the `R` package `tidyverse`. The required package can be installed using R commands.
-
-`install.packages("tidyverse")`
+To analyze the data, you will need to follow the list of commands in the Makefile.
 
 ### Execute the analysis
 
-The raw birth record data is located in the project folder (`birth.Rdata`). The R Markdown script cleans the data and includes a brief description of the project and analysis results.
+The raw birth record data is located in the project folder (`birth.Rdata`).
 
-To execute the analysis, from the project folder you can run
+`make install` will download the required packages to run the analysis.
 
-`Rscript -e "rmarkdown::render('report.Rmd')"`
+`make clean.Rdata` will clean the raw data for the analysis.
 
-This will create a file called `report.html` output in your directory that contains the results.
+`make fig1.png` will create the scatterplot of birthweight by maternal age.
+
+`make report.html` will compile the report as a file called `report.html` in your directoy that contains the result.
+
+`make clean` will remove the cleaned data file, figure, and report from your directory.
+
+`make help` reiterates the information above.
