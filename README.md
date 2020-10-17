@@ -10,7 +10,7 @@ The raw birth record data is located in the project folder (`birth.Rdata`).
 
 `make install` will download the required packages to run the analysis.
 
-`make clean.Rdata` will clean the raw data for the analysis.
+`make clean.txt` will clean the raw data for the analysis.
 
 `make fig1.png` will create the scatterplot of birthweight by maternal age.
 
