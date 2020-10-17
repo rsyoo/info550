@@ -1,7 +1,28 @@
 #! /usr/bin/env Rscript
 
+## load package
+library(tidyverse)
+
 ## read data
 load("birth.Rdata")
+
+## Function to create unique IDs
+create_unique_ids <- function(n, seed_no = 1, char_len = 5) {
+
+  set.seed(seed_no)
+  pool <- c(letters, LETTERS, 0:9)
+
+  res <- character(n)  # pre-allocating vector is much faster than growing it
+  for (i in seq(n)) {
+    this_res <- paste0(sample(pool, char_len, replace = TRUE), collapse = "")
+    while (this_res %in% res) {
+      # if there was a duplicate, redo
+      this_res <- paste0(sample(pool, char_len, replace = TRUE), collapse = "")
+    }
+    res[i] <- this_res
+  }
+  res
+}
 
 ## create unique IDs
 id <- create_unique_ids(nrow(birth))
@@ -43,4 +64,4 @@ birth <- mutate(birth,
   select(-vars)
 
 ## save data
-write.table(birth, "data.txt", quote = FALSE, row.names = FALSE)
+save(birth, file = "clean.Rdata") 
