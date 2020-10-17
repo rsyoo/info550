@@ -3,7 +3,7 @@
 ## load package
 library(tidyverse)
 
-## read data
+## read raw data
 load("birth.Rdata")
 
 ## Function to create unique IDs
@@ -63,5 +63,5 @@ birth <- mutate(birth,
   LBW = ifelse(BIRTHWEIGHT < 2500, "1", "0")) %>%
   select(-vars)
 
-## save data
-save(birth, file = "clean.Rdata") 
+## save cleaned data
+save(birth, file = "clean.Rdata")
