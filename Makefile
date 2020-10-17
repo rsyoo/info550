@@ -1,5 +1,5 @@
 # rule for making report
-report.html: clean.Rdata report.Rmd
+report.html: clean.txt fig1.png report.Rmd
 	Rscript -e "rmarkdown::render('report.Rmd', output_file = 'report.html')"
 	
 # rule for installing pckg
@@ -8,7 +8,7 @@ install: install_pckg.R
 	Rscript install_pckg.R
 
 # rule for cleaning data
-clean.Rdata: install_pckg.R clean_data.R birth.Rdata
+clean.txt: install_pckg.R birth.Rdata clean_data.R
 	chmod +x clean_data.R && \
 	Rscript clean_data.R
 
@@ -20,7 +20,7 @@ fig1.png: make_fig1.R
 # clean up directory
 .PHONY: clean
 clean:
-	rm report.html clean.Rdata fig1.png
+	rm report.html clean.txt fig1.png
 
 # help document
 .PHONY: help
