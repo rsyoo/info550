@@ -1,5 +1,8 @@
 #! /usr/bin/env Rscript
 
+# read in data
+load("birth_cleaned.Rdata")
+
 png("fig1.png")
 
 plot(birth$BIRTHWEIGHT, birth$AGE_M,
