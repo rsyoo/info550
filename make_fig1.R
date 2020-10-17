@@ -1,7 +1,7 @@
 #! /usr/bin/env Rscript
 
 # read in data
-load("birth_cleaned.Rdata")
+birth <- read.table("clean.txt", header = TRUE)
 
 # save scatterplot as png file
 png("fig1.png")
