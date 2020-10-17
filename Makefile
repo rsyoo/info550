@@ -20,7 +20,7 @@ fig1.png: make_fig1.R
 # clean up directory
 .PHONY: clean
 clean:
-	rm report.html birth_cleaned.Rdata fig1.png
+	rm report.html clean.Rdata fig1.png
 
 # help document
 .PHONY: help
