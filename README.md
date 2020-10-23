@@ -2,7 +2,7 @@
 
 For my project, I will analyze birth records from the year 1991 for the state of Kansas.
 
-To analyze the data, you will need to follow the list of commands in the Makefile.
+To analyze the data, you will need to install the required packages (`make install`) before producing the final report (`make report.html`). 
 
 ### Execute the analysis
 
