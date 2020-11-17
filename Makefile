@@ -1,26 +1,26 @@
 # rule for making report
-report.html: clean.txt fig1.png report.Rmd
-	Rscript -e "rmarkdown::render('report.Rmd', output_file = 'report.html')"
+report.html: data/clean.txt figs/fig1.png R/report.Rmd
+	Rscript -e "rmarkdown::render('R/report.Rmd', output_file = '../output/report.html')"
 	
-# rule for installing pckg
-install: install_pckg.R
-	chmod +x install_pckg.R && \
-	Rscript install_pckg.R
-
 # rule for cleaning data
-clean.txt: install_pckg.R birth.Rdata clean_data.R
-	chmod +x clean_data.R && \
-	Rscript clean_data.R
+data/clean.txt: data/birth.Rdata R/clean_data.R
+	chmod +x R/clean_data.R && \
+	Rscript R/clean_data.R
 
 # rule for making scatterplot
-fig1.png: make_fig1.R
-	chmod +x make_fig1.R && \
-	Rscript make_fig1.R
+figs/fig1.png: R/make_fig1.R
+	chmod +x R/make_fig1.R && \
+	Rscript R/make_fig1.R
+
+# rule for building docker image
+.PHONY: build
+build: Dockerfile
+		docker build -t info550 .
 		
 # clean up directory
 .PHONY: clean
 clean:
-	rm report.html clean.txt fig1.png
+	rm output/report.html data/clean.txt figs/fig1.png
 
 # help document
 .PHONY: help
@@ -29,4 +29,6 @@ help:
 	@echo "install     : Install package needed for analysis."
 	@echo "clean.Rdata : Clean birth.Rdata."
 	@echo "fig1.png    : Make a scatterplot of birthweight by maternal age."
+	@echo "build 			 : Build docker image."
 	@echo "clean       : Remove cleaned data, figure, and report."
+	
