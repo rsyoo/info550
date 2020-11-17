@@ -5,8 +5,11 @@ For my project, I will analyze birth records from the year 1991 for the state of
 This directory includes the following folders:
 
 `data`, which contains the raw birth record data (`birth.Rdata`). This folder is also where the cleaned data set will save.
+
 `R`, which contains all of the R scripts.
+
 `figs`, which will contain the scatterplot.
+
 `output`, which will contain the final report.
 
 ### Execute the analysis
