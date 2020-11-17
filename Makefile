@@ -11,12 +11,6 @@ data/clean.txt: data/birth.Rdata R/clean_data.R
 figs/fig1.png: R/make_fig1.R
 	chmod +x R/make_fig1.R && \
 	Rscript R/make_fig1.R
-
-# install pckg
-.PHONY: install
-install: R/install_pckg.R
-	chmod +x R/install_pckg.R && \
-	Rscript R/install_pckg.R
 	
 # build docker image
 .PHONY: build
