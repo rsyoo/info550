@@ -2,20 +2,19 @@
 
 For my project, I will analyze birth records from the year 1991 for the state of Kansas.
 
-To analyze the data, you will need to install the required packages (`make install`) before producing the final report (`make report.html`). 
+This directory includes the following folders:
+
+`data`, which contains the raw birth record data (`birth.Rdata`). This folder is also where the cleaned data set will save.
+`R`, which contains all of the R scripts.
+`figs`, which will contain the scatterplot.
+`output`, which will contain the final report.
 
 ### Execute the analysis
 
-The raw birth record data is located in the project folder (`birth.Rdata`).
+To analyze the data, you will need to pull the docker image using the following command:
 
-`make install` will download the required packages to run the analysis.
+`docker pull rsyoo/info550`
 
-`make clean.txt` will clean the raw data for the analysis.
+To retrieve the final report, you will need to mount your local directory using the following command:
 
-`make fig1.png` will create the scatterplot of birthweight by maternal age.
-
-`make report.html` will compile the report as a file called `report.html` in your directory that contains the result.
-
-`make clean` will remove the cleaned data file, figure, and report from your directory.
-
-`make help` reiterates the information above.
+`docker run -v /path/to/info550:/project/output -it info550`
