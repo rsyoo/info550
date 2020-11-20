@@ -23,3 +23,5 @@ To retrieve the final report, you will need to mount your local directory using 
 `docker run -v /path/to/info550:/project -it rsyoo/info550`
 
 Note that `path/to/info550` is where you have saved the project directory.
+
+Run `make clean` if you want to remove the report, figure, and cleaned data from the project directory.
