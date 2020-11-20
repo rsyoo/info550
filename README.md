@@ -20,6 +20,6 @@ To analyze the data, you will need to pull the docker image using the following 
 
 To retrieve the final report, you will need to mount your local directory using the following command:
 
-`docker run -v /path/to/info550:/project/output -it info550`
+`docker run -v /path/to/info550:/project -it rsyoo/info550`
 
 Note that `path/to/info550` is where you have saved the project directory.
