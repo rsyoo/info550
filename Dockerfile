@@ -6,7 +6,6 @@ RUN Rscript -e "install.packages('tidyverse')"
 ## make a project directory in the container
 ## we will mount our local project directory to this directory
 RUN mkdir /project
-RUN mkdir /project/output
 
 ## copy contents of my local folder to project folder in container
 COPY ./ /project/
