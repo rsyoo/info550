@@ -1,0 +1,48 @@
+---
+title: "Births in Kansas (1991)"
+author: "Sodahm Robin Yoo"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output: html_document
+---
+
+<!--
+	This code chunk suppresses all code chunks from appearing in the rendered
+  document
+-->
+
+```{r, setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+```
+
+```{r, read-data, echo = FALSE}
+
+## read in data
+birth <- read.table("../data/clean.txt", header = TRUE)
+
+```
+
+## Executive summary
+
+These birth records are for the state of Kansas in 1991. We are interested in
+examining the associations between the covariates in the data set and adverse
+birth outcomes, including low birthweight.
+
+There are `r nrow(birth)` birth records in the data set, with `r ncol(birth)`
+variables for each record.
+
+Low birthweight is defined as a weight less than 2500 grams, regardless of gestational age.
+
+Of `r nrow(birth)` births in Kansas in 1991, `r sum(birth$LBW == "1", na.rm = TRUE)` resulted in
+low birthweights.
+
+Overall, we found a `r ifelse(cor(birth$BIRTHWEIGHT, birth$AGE_M, use = "complete.obs") > 0, "positive", "negative")`
+relationship between maternal age and birthweight.
+
+## Analysis
+
+We analyzed the relationship between maternal age (`AGE_M`) and birthweight (`BIRTHWEIGHT`).
+A scatterplot is shown below.
+
+![Scatter plot of birthweight by maternal age](../figs/fig1.png)
